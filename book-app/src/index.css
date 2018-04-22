@@ -3,3 +3,45 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.bg-indigo{
+  background: #3F51B5;
+}
+
+.indigo{
+  color: #3F51B5;
+}
+
+.white{
+  color: white;
+}
+
+.no-radius{
+  border-radius:none;
+}
+
+.padding-0{
+  padding:0;
+}
+
+.padding-15{
+  padding:0 15px;
+}
+
+.padding-all{
+  padding: 15px;
+}
+
+.margin-0{
+  margin:0;
+}
+
+.margin-15{
+  margin:15px 0;
+}
+
+.margin-all{
+  margin: 15px;
+}
+
+
