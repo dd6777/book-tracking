@@ -1,3 +1,30 @@
+
+@import '<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,600i,700,700i,800,800i|Pacifico" rel="stylesheet">';
+
+
+/*
+
+font-family: 'Pacifico', cursive;
+font-family: 'Open Sans', sans-serif;
+
+*/
+
+
+
+.h1,h2,h3,h4,h5,h6,.heading{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;  
+  letter-spacing: 2px;
+  
+}
+
+p,span,li,a,.para{
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+}
+
+
+
 body {
   margin: 0;
   padding: 0;
@@ -40,8 +67,61 @@ body {
   margin:15px 0;
 }
 
+.margin-10{
+  margin:10px 0;
+}
+
 .margin-all{
   margin: 15px;
 }
 
+.full-width{
+  width:100%;
+}
 
+
+
+
+
+
+
+
+.padding-topBar{
+  padding: 10px 15px;
+}
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: 768px) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+}
