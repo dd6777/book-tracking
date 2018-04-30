@@ -7,8 +7,9 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 import * as api from  "./book-api"
 import AllBooks from './allBooks';
 import CurrentlyReading from './currentlyReading';
+import WantToRead from './wantToRead';
+import Read from './read';
 
- 
 
 
 
@@ -32,8 +33,31 @@ class App extends Component {
         books
       }))
 
-     
-    })
+      var current =  this.state.books.filter(e => (e.shelf === "currentlyReading"));
+
+      this.setState(() => ({
+        present: current
+      }))
+
+      var newBook =  this.state.books.filter(e => (e.shelf === "wantToRead"));
+
+      this.setState(() => ({
+        future: newBook
+      }))
+
+      var old =  this.state.books.filter(e => (e.shelf === "read"));
+
+      this.setState(() => ({
+        past: old
+      }))
+
+      console.log(books);
+      console.log(current);
+      console.log(newBook);
+      console.log(old);
+      
+      
+    });
 
   }
 
@@ -51,8 +75,12 @@ class App extends Component {
           
           <div className="container">
             <AllBooks allBooks={this.state} />
-
+            
             <CurrentlyReading currentlyReading={this.state} />
+            <WantToRead wantToRead={this.state} />
+            <Read read={this.state} />
+            
+            
             
       
             <div id="wantToRead">
