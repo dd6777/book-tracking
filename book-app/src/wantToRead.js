@@ -29,6 +29,16 @@ class WantToRead extends Component{
                                 </h6>
 
                               </div>
+
+                              <div className ="book-options row">
+                                <div className = "col-6 button-1 padding-0">
+                                    <button className="btn btn-black no-radius form-control" onClick = {() => this.props.passPast(book)}>Move to Read</button> 
+                                </div>
+
+                                <div className = "col-6 button-2 padding-0">
+                                    <button className="btn btn-black no-radius form-control" onClick = {() => this.props.passPresent(book)}>Move to Currently Reading</button> 
+                                </div>
+                              </div>
                              
                             </div>
                           </div>

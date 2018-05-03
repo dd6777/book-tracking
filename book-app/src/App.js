@@ -59,8 +59,103 @@ class App extends Component {
       
     });
 
-  }
+    
+}
 
+
+moveToFuture = (book) => {
+  this.setState((currentBook) => ({
+      books: currentBook.books.filter((e) => {
+      
+        return book.shelf = "wantToRead" 
+ 
+      }),
+
+      future: currentBook.books.filter((e) => {
+        
+       return e.shelf === book.shelf        
+ 
+      }),
+
+      present: currentBook.present.filter((e) => {
+        
+        return e.id !== book.id        
+  
+       }),
+
+       past: currentBook.past.filter((e) => {
+        
+        return e.id !== book.id        
+  
+       })
+
+      
+  }))
+
+}
+
+moveToPresent = (book) => {
+  this.setState((currentBook) => ({
+      books: currentBook.books.filter((e) => {
+      
+        return book.shelf = "currentlyReading" 
+ 
+      }),
+
+      present: currentBook.books.filter((e) => {
+        
+       return e.shelf === book.shelf        
+ 
+      }),
+
+      past: currentBook.past.filter((e) => {
+        
+        return e.id !== book.id        
+  
+       }),
+
+       future: currentBook.future.filter((e) => {
+        
+        return e.id !== book.id        
+  
+       })
+
+      
+  }))
+
+}
+
+
+moveToPast = (book) => {
+  this.setState((currentBook) => ({
+      books: currentBook.books.filter((e) => {
+      
+        return book.shelf = "read" 
+ 
+      }),
+
+      past: currentBook.books.filter((e) => {
+        
+       return e.shelf === book.shelf        
+ 
+      }),
+
+      present: currentBook.present.filter((e) => {
+        
+        return e.id !== book.id        
+  
+       }),
+
+       future: currentBook.future.filter((e) => {
+        
+        return e.id !== book.id        
+  
+       })
+
+      
+  }))
+
+}
 
   render() {
     
@@ -74,11 +169,33 @@ class App extends Component {
           </div>
           
           <div className="container">
+            <CurrentlyReading 
+            
+              currentlyReading={this.state} 
+              passFuture = {this.moveToFuture}
+              passPast = {this.moveToPast}
+              
+            
+            />
+                        
+            <WantToRead 
+              wantToRead={this.state}
+              passPresent = {this.moveToPresent}
+              passPast = {this.moveToPast}
+
+              />
+
+            <Read 
+            
+              read={this.state}
+              passPresent = {this.moveToPresent}
+              passFuture = {this.moveToFuture}
+              
+
+            />
+
             <AllBooks allBooks={this.state} />
             
-            <CurrentlyReading currentlyReading={this.state} />
-            <WantToRead wantToRead={this.state} />
-            <Read read={this.state} />
             
             
             

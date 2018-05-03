@@ -44,7 +44,7 @@ body {
 }
 
 .no-radius{
-  border-radius:none;
+  border-radius:0;
 }
 
 .padding-0{
@@ -139,6 +139,7 @@ body {
 
 .book-container{
   height: 400px;
+  overflow: hidden;
 }
 
 .relative{
@@ -176,6 +177,8 @@ body {
   height: 100px;
   width:100%;
   bottom:0;
+  z-index: 9;
+  
 }
 
 .img  img{
@@ -189,6 +192,7 @@ body {
   position: relative;
   margin: auto;
   padding: 8px 15px;
+  
 
   
 }
@@ -227,4 +231,78 @@ body {
 
 .bg-sky{
   background:#a7edfe;
+}
+
+.book-options button{
+  font-size: 12px;
+ 
+}
+
+
+.book-options{
+  position: absolute;
+  z-index: 9;
+  width:100% ;
+  left: 15px;
+  top: 0;
+  display: none;
+  box-shadow: 10px 0 18px rgba(0, 0, 0, 1);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+
+.btn-border{
+  background: white;
+  outline: 2px solid #212121;
+  outline-offset: -2px;
+  color: #212121;
+}
+
+
+.btn-border:hover{
+  background: #212121;
+  outline: 2px solid #212121;
+  outline-offset: -2px;
+  color: #fff;
+}
+
+.btn-black{
+  background: #212121;
+  outline: 2px solid #212121;
+  outline-offset: -2px;
+  color: #fff;
+}
+
+.btn-black:hover{
+  background: white;
+  outline: 2px solid #212121;
+  outline-offset: -2px;
+  color: #212121;
+}
+
+
+.black-overlay{
+  background: rgba(33,33,33,0.6);
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+
+.book-container:hover .black-overlay{
+  display: flex;
+
+}
+
+.book-container:hover .book-options{
+  display: flex;
+ 
+}
+
+.book-container:hover .book-desc h6{
+  box-shadow: 0 0 18px rgba(33,33,33, 1);
+  
 }
