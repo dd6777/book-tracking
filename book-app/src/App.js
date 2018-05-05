@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 import * as api from  "./book-api"
 import AllBooks from './allBooks';
 import CurrentlyReading from './currentlyReading';
 import WantToRead from './wantToRead';
 import Read from './read';
+import Search from './search';
+import { Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 
 
@@ -23,7 +24,7 @@ class App extends Component {
     
   }
 
-  contact = [{ name : "devil"}];
+
   
 
   componentDidMount(){
@@ -91,6 +92,8 @@ moveToFuture = (book) => {
 
       
   }))
+  
+  api.update(book,"wantToRead");
 
 }
 
@@ -122,6 +125,9 @@ moveToPresent = (book) => {
 
       
   }))
+
+  api.update(book,"currentlyReading");
+  
 
 }
 
@@ -155,16 +161,22 @@ moveToPast = (book) => {
       
   }))
 
+  api.update(book,"read");
+  
+
 }
 
   render() {
     
     return (
+
+      <div>
+      <Route exact path="/"  render={()=> (
       <div className=" main-page "> 
           <div className="container-fluid padding-all bg-indigo">
-            <div className="container">
-              <h3 className="white pacifico"><i className="fa fa-book"> </i> My Books </h3>
-              
+            <div className="container d-flex justify-content-between ">
+              <h3 className="white pacifico "><i className="fa fa-book"> </i> MY BOOKS </h3>
+              <h4 className="white"><Link to="/search"> <i className="fa fa-search"></i> </Link></h4>
             </div>
           </div>
           
@@ -194,27 +206,26 @@ moveToPast = (book) => {
 
             />
 
-            <AllBooks allBooks={this.state} />
+            {/* <AllBooks allBooks={this.state} /> */}
             
-            
-            
-            
-      
-            <div id="wantToRead">
-
-            </div>
-
-            
-            <div id="Read">
-
-            </div>
+                    
           </div>
 
 
 
       </div>
 
+     )} />
 
+     <Route path='/search' render={() => (
+          <Search/>
+      )} />
+     
+     </div>
+     
+
+
+   
     );
   }
 }

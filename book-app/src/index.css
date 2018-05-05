@@ -306,3 +306,16 @@ body {
   box-shadow: 0 0 18px rgba(33,33,33, 1);
   
 }
+
+
+h4 a{
+  color:white;
+}
+
+h4 a:hover{
+  color:#ccc;
+}
+
+.fa-arrow-left{
+  margin-right: 20px;
+}
