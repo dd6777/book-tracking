@@ -319,3 +319,24 @@ h4 a:hover{
 .fa-arrow-left{
   margin-right: 20px;
 }
+
+.search-bar{
+  margin-left: 15px;
+  border:none;
+  box-shadow: none;
+  border-bottom: 2px dotted orange;
+  width: 40%;
+  min-width: 180px;
+  background: transparent;
+  color:white;
+}
+
+.search-bar:focus{
+  outline: none;
+}
+
+
+.search-bar::placeholder{
+  color: #ccc;
+}
+

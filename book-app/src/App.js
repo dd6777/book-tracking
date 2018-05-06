@@ -218,7 +218,7 @@ moveToPast = (book) => {
      )} />
 
      <Route path='/search' render={() => (
-          <Search/>
+          <Search searchComp={this.state}/>
       )} />
      
      </div>
