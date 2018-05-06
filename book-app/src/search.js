@@ -10,7 +10,7 @@ class Search extends Component{
 
     updateSearch = (query) => {
         this.setState(() => ({
-            query: query.trim()
+            query: query
         }))
     
 
@@ -56,8 +56,44 @@ class Search extends Component{
                                 </h6>
 
                               </div>
-                             
+
+                              <div className ="book-heading row">
+                                <div className = "col-12 button-1 padding-0">
+                                    <h6 className="text-center">
+                                    
+                                       {( book.shelf == "wantToRead")? "Want To Read" : ""}
+                                       {( book.shelf == "read")? "Read" : ""}                                         
+                                       {( book.shelf == "currentlyReading")? "Currently Reading" : ""}                                         
+                                                                                                                        
+                                    </h6>
+                                </div>
+
+                               
+                              </div>
+
                             </div>
+
+                            <div className ="book-Soptions row">
+                                <div className = "col-12 padding-0">
+
+                                    <Link to="/" className="btn btn-border no-radius form-control" onClick = {() => this.props.passPresent(book)}>Move To Currently Reading</Link> 
+                                    
+                                </div>
+                                <div className = "col-6 padding-0">
+                                    
+                                    <Link to="/" className="btn btn-black no-radius form-control" onClick = {() => this.props.passFuture(book)}>Move To Want To Read</Link> 
+                                   
+                                </div>
+                                <div className = "col-6 padding-0">
+                                
+                                    <Link to="/" className="btn btn-black no-radius form-control" onClick = {() => this.props.passPast(book)}>Move To Read</Link> 
+                                    
+                                    
+                                </div>
+
+                              </div>
+                              
+
                           </div>
                           
 

@@ -251,6 +251,34 @@ body {
   -webkit-transition: 0.5s;
 }
 
+.book-Soptions{
+  position: relative;
+  z-index: 9;
+  width:100% ;
+  left: 15px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+
+.book-heading{
+  position: absolute;
+  z-index: 9000;
+  width:100% ;
+  left: 15px;
+  top: 0;
+  opacity:1 ;
+  box-shadow: 10px 0 18px rgba(0, 0, 0, 1);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  background: #333;
+  color:white;
+}
+
+.book-heading h6{
+  margin:0;
+  padding: 8px;
+}
+
 .btn-border{
   background: white;
   outline: 2px solid #212121;
@@ -340,3 +368,6 @@ h4 a:hover{
   color: #ccc;
 }
 
+.btn-black,.btn-border{
+  font-size: 12px;
+}
