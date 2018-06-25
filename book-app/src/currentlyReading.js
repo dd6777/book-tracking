@@ -6,6 +6,8 @@ class CurrentlyReading extends Component{
     
   render() {
   
+    console.log(this.props.currentlyReading);
+
     return (
         
         <div id="currentlyReading">

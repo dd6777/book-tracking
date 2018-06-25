@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import App from "./App";
+
 
 class Search extends Component{
 
@@ -61,9 +61,9 @@ class Search extends Component{
                                 <div className = "col-12 button-1 padding-0">
                                     <h6 className="text-center">
                                     
-                                       {( book.shelf == "wantToRead")? "Want To Read" : ""}
-                                       {( book.shelf == "read")? "Read" : ""}                                         
-                                       {( book.shelf == "currentlyReading")? "Currently Reading" : ""}                                         
+                                       {( book.shelf === "wantToRead")? "Want To Read" : ""}
+                                       {( book.shelf === "read")? "Read" : ""}                                         
+                                       {( book.shelf === "currentlyReading")? "Currently Reading" : ""}                                         
                                                                                                                         
                                     </h6>
                                 </div>
@@ -76,7 +76,7 @@ class Search extends Component{
                             <div className ="book-Soptions row">
                                 <div className = "col-12 padding-0">
 
-                                    <Link to="/" className="btn btn-border no-radius form-control" onClick = {() => this.props.passPresent(book)}>Move To Currently Reading</Link> 
+                                    <Link to="/" className="btn btn-black no-radius form-control" onClick = {() => this.props.passPresent(book)}>Move To Currently Reading</Link> 
                                     
                                 </div>
                                 <div className = "col-6 padding-0">
