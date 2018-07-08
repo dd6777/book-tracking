@@ -21,9 +21,9 @@ class Search extends Component{
         const { query } = this.state;
         const { books } = this.props.searchComp;
         
-        const filteredBooks = query === "" ? books : books.filter((e) => e.title.toLowerCase().includes(query.toLowerCase()));
+        const filteredBooks = query === "" ? [] : books.filter((e) => e.title.toLowerCase().includes(query.toLowerCase()));
         return(    
-            
+             
             <div className=" main-page "> 
                 <div className="container-fluid padding-all bg-indigo">
                     <div className="container d-flex justify-content-left ">
@@ -74,22 +74,15 @@ class Search extends Component{
                             </div>
 
                             <div className ="book-Soptions row">
-                                <div className = "col-12 padding-0">
+                               
 
-                                    <Link to="/" className="btn btn-black no-radius form-control" onClick = {() => this.props.passPresent(book)}>Move To Currently Reading</Link> 
-                                    
-                                </div>
-                                <div className = "col-6 padding-0">
-                                    
-                                    <Link to="/" className="btn btn-black no-radius form-control" onClick = {() => this.props.passFuture(book)}>Move To Want To Read</Link> 
-                                   
-                                </div>
-                                <div className = "col-6 padding-0">
-                                
-                                    <Link to="/" className="btn btn-black no-radius form-control" onClick = {() => this.props.passPast(book)}>Move To Read</Link> 
-                                    
-                                    
-                                </div>
+                                <select className="form-control selValue" id={book.id} onChange={() => this.props.afterChange(book)} >
+                                    <option value="None">None</option>
+                                    <option value="currentlyReading">Move To Currently Reading</option>
+                                    <option value="wantToRead">Move To Want To Read</option>
+                                    <option value="read">Move To Read</option>
+
+                                </select>
 
                               </div>
                               

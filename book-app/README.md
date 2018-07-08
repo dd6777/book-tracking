@@ -1,3 +1,20 @@
+//Read Me
+
+1. Install the project just by opening book-app folder in cmd prompt 
+2. write npm install then enter to get all relevant dependancies
+3. write npm start to start the project.
+4. all state is managed on app.js
+5. Search is working fine
+6. as a begineer to js and react. I have created each and every function seperately its easy for a begineer to understand according to me.
+
+
+
+
+
+
+
+//auto genetated
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

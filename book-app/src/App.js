@@ -50,13 +50,7 @@ class App extends Component {
 
       this.setState(() => ({
         past: old
-      }))
-
-      console.log(books);
-      console.log(current);
-      console.log(newBook);
-      console.log(old);
-      
+      }))    
       
     });
 
@@ -134,10 +128,8 @@ moveToPresent = (book) => {
 
 moveToPast = (book) => {
   this.setState((currentBook) => ({
-      books: currentBook.books.filter((e) => {
-      
+      books: currentBook.books.filter((e) => {     
         return book.shelf = "read" 
- 
       }),
 
       past: currentBook.books.filter((e) => {
@@ -160,16 +152,38 @@ moveToPast = (book) => {
 
       
   }))
-
+ 
   api.update(book,"read");
   
+}
 
+
+searchSelect =  (book) => {
+  var newVal
+  var currentBook = book.id
+
+  var selValue = document.querySelectorAll(".selValue")
+  
+    for(var i=0;i<selValue.length;i++){
+        if(currentBook === selValue[i].id){
+           newVal =  selValue[i].value
+        }
+    }
+
+  this.setState((currentBook) => ({
+      books: currentBook.books.filter((e) => {     
+        return book.shelf = newVal 
+      })
+    }))
+    
+    api.update(book,newVal)
+    console.log("new books are", this.state.books)
 }
 
   render() {
     
     return (
-
+      
       <div>
       <Route exact path="/"  render={()=> (
       <div className=" main-page "> 
@@ -206,7 +220,7 @@ moveToPast = (book) => {
 
             />
 
-            {/* <AllBooks allBooks={this.state} /> */}
+            <AllBooks allBooks={this.state} />
             
                     
           </div>
@@ -221,10 +235,8 @@ moveToPast = (book) => {
           <Search 
           
             searchComp={this.state}
-            passFuture = {this.moveToFuture}
-            passPast = {this.moveToPast}
-            passPresent = {this.moveToPresent}
-            
+            afterChange = {this.searchSelect}
+           
             />
       )} />
      

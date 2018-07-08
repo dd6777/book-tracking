@@ -6,8 +6,6 @@ class CurrentlyReading extends Component{
     
   render() {
   
-    console.log(this.props.currentlyReading);
-
     return (
         
         <div id="currentlyReading">
@@ -17,8 +15,6 @@ class CurrentlyReading extends Component{
                         
 
                         {this.props.currentlyReading.present.map((book,color) => (
-
-                          
 
                           <div className="col-sm-4 margin-15 " key = {book.id}>
                             <div className={`text-center relative book-container ${this.props.currentlyReading.bgColors[(this.props.currentlyReading.bgColors.length > color) ? color : 2 /*don't know syntax to write color val to 0 */ ]} `}  >
